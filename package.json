@@ -6,7 +6,7 @@
   "author": "sandeepsj",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepsj/ai-form-filler.git"
+    "url": "git+https://github.com/sandeepsj/ai-form-filler.git"
   },
   "homepage": "https://github.com/sandeepsj/ai-form-filler#readme",
   "bugs": {
