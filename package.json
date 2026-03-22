@@ -4,6 +4,14 @@
   "description": "AI-powered autofill for any HTML form — works with React, Svelte, or vanilla JS",
   "license": "MIT",
   "author": "sandeepsj",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandeepsj/ai-form-filler.git"
+  },
+  "homepage": "https://github.com/sandeepsj/ai-form-filler#readme",
+  "bugs": {
+    "url": "https://github.com/sandeepsj/ai-form-filler/issues"
+  },
   "keywords": ["ai", "form", "autofill", "llm", "openai", "anthropic", "react", "svelte"],
   "type": "module",
   "sideEffects": false,
