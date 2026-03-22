@@ -1,6 +1,6 @@
 {
   "name": "ai-form-filler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AI-powered autofill for any HTML form — works with React, Svelte, or vanilla JS",
   "license": "MIT",
   "author": "sandeepsj",
@@ -12,7 +12,16 @@
   "bugs": {
     "url": "https://github.com/sandeepsj/ai-form-filler/issues"
   },
-  "keywords": ["ai", "form", "autofill", "llm", "openai", "anthropic", "react", "svelte"],
+  "keywords": [
+    "ai",
+    "form",
+    "autofill",
+    "llm",
+    "openai",
+    "anthropic",
+    "react",
+    "svelte"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {
@@ -70,9 +79,15 @@
     "svelte": ">=4.0.0"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": true },
-    "react-dom": { "optional": true },
-    "svelte": { "optional": true }
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    }
   },
   "optionalDependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
