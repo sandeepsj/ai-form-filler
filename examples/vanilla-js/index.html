@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai-form-filler — Vanilla JS Example</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 10px 20px; cursor: pointer; }
+    #status { margin-top: 12px; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>AI Form Filler — Vanilla JS Demo</h1>
+
+  <div>
+    <label for="raw-data">Paste your raw data (resume, notes, etc.):</label>
+    <textarea id="raw-data" rows="5" placeholder="e.g. My name is Jane Doe, email: jane@example.com, 7 years experience..."></textarea>
+  </div>
+
+  <button id="autofill-btn">Autofill Form with AI</button>
+  <div id="status"></div>
+
+  <hr />
+
+  <form id="job-form">
+    <label>Full Name <input name="fullName" type="text" /></label>
+    <label>Email <input name="email" type="email" /></label>
+    <label>Phone <input name="phone" type="tel" /></label>
+    <label>Years of Experience <input name="yearsExperience" type="number" /></label>
+    <label>Position
+      <select name="position">
+        <option value="">Select...</option>
+        <option value="junior">Junior Engineer</option>
+        <option value="mid">Mid-Level Engineer</option>
+        <option value="senior">Senior Engineer</option>
+        <option value="staff">Staff Engineer</option>
+      </select>
+    </label>
+    <label><input name="remoteOk" type="checkbox" /> Open to Remote</label>
+    <label>Earliest Start Date <input name="startDate" type="date" /></label>
+    <label>Cover Letter <textarea name="coverLetter" rows="4"></textarea></label>
+  </form>
+
+  <!--
+    In a real project, load from CDN:
+    <script src="https://cdn.jsdelivr.net/npm/ai-form-filler/dist/ai-form-filler.umd.js"></script>
+
+    For local dev (after npm run build):
+    <script src="../../dist/ai-form-filler.umd.js"></script>
+  -->
+  <script type="module">
+    // NOTE: Replace with your actual built UMD path or CDN URL
+    // import { AIFormFiller, AnthropicAdapter } from '../../dist/index.js';
+
+    // This example shows the intended usage pattern:
+    const formConfig = {
+      title: 'Job Application Form',
+      fields: [
+        { key: 'fullName', label: 'Full Name', type: 'text', required: true },
+        { key: 'email', label: 'Email Address', type: 'email', required: true },
+        { key: 'phone', label: 'Phone Number', type: 'tel' },
+        { key: 'yearsExperience', label: 'Years of Experience', type: 'number' },
+        {
+          key: 'position',
+          label: 'Position',
+          type: 'select',
+          options: [
+            { value: 'junior', label: 'Junior Engineer' },
+            { value: 'mid', label: 'Mid-Level Engineer' },
+            { value: 'senior', label: 'Senior Engineer' },
+            { value: 'staff', label: 'Staff Engineer' },
+          ],
+          required: true,
+        },
+        { key: 'remoteOk', label: 'Open to Remote Work', type: 'checkbox' },
+        { key: 'startDate', label: 'Earliest Start Date', type: 'date' },
+        { key: 'coverLetter', label: 'Cover Letter', type: 'textarea' },
+      ],
+    };
+
+    document.getElementById('autofill-btn').addEventListener('click', async () => {
+      const rawData = document.getElementById('raw-data').value;
+      const status = document.getElementById('status');
+      const form = document.getElementById('job-form');
+
+      if (!rawData.trim()) {
+        status.textContent = 'Please enter some raw data first.';
+        return;
+      }
+
+      status.textContent = 'Filling form...';
+
+      // Usage with your own adapter:
+      // const adapter = new AnthropicAdapter({ apiKey: 'YOUR_API_KEY' });
+      // const filler = new AIFormFiller({ adapter, config: formConfig, formElement: form });
+      // const result = await filler.fill(rawData);
+      // status.textContent = `Done! Filled ${result.filledCount} fields.`;
+
+      status.textContent = 'Load the built bundle to test live. See README for instructions.';
+    });
+  </script>
+</body>
+</html>

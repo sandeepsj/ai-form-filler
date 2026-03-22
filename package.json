@@ -1,0 +1,87 @@
+{
+  "name": "ai-form-filler",
+  "version": "0.1.0",
+  "description": "AI-powered autofill for any HTML form — works with React, Svelte, or vanilla JS",
+  "license": "MIT",
+  "author": "sandeepsj",
+  "keywords": ["ai", "form", "autofill", "llm", "openai", "anthropic", "react", "svelte"],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs",
+      "types": "./dist/react/index.d.ts"
+    },
+    "./svelte": {
+      "import": "./dist/svelte/index.js",
+      "require": "./dist/svelte/index.cjs",
+      "types": "./dist/svelte/index.d.ts"
+    },
+    "./adapters/openai": {
+      "import": "./dist/adapters/openai-adapter.js",
+      "require": "./dist/adapters/openai-adapter.cjs",
+      "types": "./dist/adapters/openai-adapter.d.ts"
+    },
+    "./adapters/anthropic": {
+      "import": "./dist/adapters/anthropic-adapter.js",
+      "require": "./dist/adapters/anthropic-adapter.cjs",
+      "types": "./dist/adapters/anthropic-adapter.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": "./dist/ai-form-filler.umd.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json",
+    "lint": "eslint src tests",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "svelte": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true },
+    "svelte": { "optional": true }
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "happy-dom": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "svelte": "^4.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}
