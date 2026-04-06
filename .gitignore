@@ -4,3 +4,5 @@ coverage/
 .env
 .env.local
 *.tgz
+extension/dist/
+extension/node_modules/
