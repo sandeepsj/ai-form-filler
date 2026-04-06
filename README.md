@@ -294,6 +294,57 @@ Fields where the LLM returns `null` are left untouched.
 
 ---
 
+## Chrome Extension
+
+A ready-to-use Chrome extension that auto-fills **any** form on any website — job applications, government forms, signups, checkout pages, etc.
+
+### Install (Developer Mode)
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/sandeepsj/ai-form-filler.git
+   cd ai-form-filler/extension
+   npm install
+   npm run build
+   ```
+
+2. Open Chrome → go to `chrome://extensions`
+
+3. Enable **Developer mode** (toggle in the top-right)
+
+4. Click **"Load unpacked"** → select the `extension/dist` folder
+
+5. Pin the extension from the puzzle piece icon in your toolbar
+
+### Setup
+
+1. Click the extension icon → **Settings** tab
+2. Pick your LLM provider (OpenAI or Anthropic) and paste your API key
+3. Go to the **Profiles** tab → click **"+ Add Profile"**
+4. Give it a name (e.g. "My Resume", "Home Address") and paste your data
+5. Check the checkbox next to profiles you want to use
+
+### Usage
+
+1. Navigate to any page with a form
+2. Click the extension icon → **Fill** tab → **"Fill This Page"**
+3. The extension auto-detects all form fields, sends them + your profile data to the LLM, and fills the form
+
+You can create multiple profiles (resume, personal info, company details) and select which ones to use before filling.
+
+### Updating
+
+```bash
+cd ai-form-filler/extension
+git pull
+npm install
+npm run build
+```
+
+Then go to `chrome://extensions` and click the refresh icon on the extension card.
+
+---
+
 ## License
 
 MIT
